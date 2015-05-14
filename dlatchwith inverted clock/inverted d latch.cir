@@ -1,0 +1,64 @@
+
+
+M1000 invout clock vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=496 ps=284
+M1001 a_6_n27# D vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1002 vdd invout a_6_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1003 a_142_n27# a_19_n119# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1004 vdd invout a_142_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1005 a_307_n27# a_142_n27# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1006 vdd Q a_307_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1007 Q a_307_n27# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1008 vdd a_6_n27# Q vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1009 invout clock gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=192 ps=144
+M1010 a_15_n26# D a_6_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1011 gnd invout a_15_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1012 a_151_n26# a_19_n119# a_142_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1013 gnd invout a_151_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1014 a_316_n26# a_142_n27# a_307_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1015 gnd Q a_316_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1016 a_457_n26# a_307_n27# Q Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1017 gnd a_6_n27# a_457_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1018 a_19_n119# D vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+
+M1019 a_19_n119# D gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+
+rgnd gnd 0 1e-6
+v3 vdd gnd 5
+v1 D 0 pulse(0 5 80ns 0ns 0ns 200ns 1000ns)
+v2 clock 0 pulse(0 5 90ns 0ns 0ns 40ns 100ns)
+
+.trans 1ns 1000ns
+..MODEL nfet NMOS ( kp=4.32e-4 vt0=0.4)
+.MODEL pfet pMOS ( kp=1.12e-4 vt0=-0.4)
+
+
+.print dc v(clock)
+.print dc v(invout)
+
+.print dc v(D)
+.print dc v(Q)
+
+.end
+
+
+

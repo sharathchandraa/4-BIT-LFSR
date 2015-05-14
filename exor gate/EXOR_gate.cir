@@ -1,0 +1,49 @@
+spice file for EXOR gate using NAND gates
+M1000 a_n756_n562# A vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=384 ps=224
+M1001 vdd a_n721_n563# a_n756_n562# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1002 out a_n756_n562# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1003 vdd a_n638_n563# out vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1004 a_n638_n563# a_n721_n563# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1005 vdd B a_n638_n563# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1006 a_n721_n563# A vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1007 vdd B a_n721_n563# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1008 a_n747_n561# A a_n756_n562# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1009 gnd a_n721_n563# a_n747_n561# Gnd nfet w=4 l=2
++ ad=128 pd=96 as=0 ps=0
+M1010 a_n664_n561# a_n756_n562# out Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1011 gnd a_n638_n563# a_n664_n561# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1012 a_n576_n561# a_n721_n563# a_n638_n563# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1013 gnd B a_n576_n561# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1014 a_n493_n561# A a_n721_n563# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1015 gnd B a_n493_n561# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+
+
+rgnd gnd 0 1e-6
+v3 vdd gnd 5
+v1 A 0 pulse(0 5 20ns 0.1ps 0.1ps 20ns 100ns)
+v2 B 0 pulse(0 5 20ns 0.1ps 0.1ps 20ns 100ns)
+
+.trans 1ns 300ns
+..MODEL nfet NMOS ( kp=4.32e-4 vt0=0.4)
+.MODEL pfet pMOS ( kp=1.12e-4 vt0=-0.4)
+
+.print dc v(A)
+.print dc v(B)
+.print dc v(out)
+.end
+

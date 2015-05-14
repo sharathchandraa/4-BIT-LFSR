@@ -1,0 +1,94 @@
+
+M1000 a_n681_n32# D vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=936 ps=538
+M1001 vdd clock a_n681_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1002 a_n545_n32# a_n668_n124# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1003 vdd clock a_n545_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1004 a_n440_n32# a_n545_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1005 vdd a_n405_n33# a_n440_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1006 a_n405_n33# a_n440_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1007 vdd a_n681_n32# a_n405_n33# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1008 invout clock vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+M1009 a_n83_n27# a_n405_n33# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1010 vdd invout a_n83_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1011 a_53_n27# a_n70_n119# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1012 vdd invout a_53_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1013 a_139_n27# a_53_n27# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1014 vdd Q a_139_n27# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1015 Q a_139_n27# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1016 vdd a_n83_n27# Q vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1017 a_n672_n31# D a_n681_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1018 gnd clock a_n672_n31# Gnd nfet w=4 l=2
++ ad=352 pd=264 as=0 ps=0
+M1019 a_n536_n31# a_n668_n124# a_n545_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1020 gnd clock a_n536_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1021 a_n431_n31# a_n545_n32# a_n440_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1022 gnd a_n405_n33# a_n431_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1023 a_n334_n31# a_n440_n32# a_n405_n33# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1024 gnd a_n681_n32# a_n334_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1025 invout clock gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+M1026 a_n74_n26# a_n405_n33# a_n83_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1027 gnd invout a_n74_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1028 a_62_n26# a_n70_n119# a_53_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1029 gnd invout a_62_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1030 a_148_n26# a_53_n27# a_139_n27# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1031 gnd Q a_148_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1032 a_239_n26# a_139_n27# Q Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1033 gnd a_n83_n27# a_239_n26# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1034 a_n668_n124# D vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+M1035 a_n70_n119# a_n405_n33# vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+M1036 a_n70_n119# a_n405_n33# gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+M1037 a_n668_n124# D gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+rgnd gnd 0 1e-6
+v3 vdd gnd 5
+v1 D 0 pulse(0 5 130ns 0ns 0ns 20ns 500ns)
+v2 clock 0 pulse(0 5 90ns 0ns 0ns 40ns 100ns)
+
+.trans 1ns 1000ns
+..MODEL nfet NMOS ( kp=4.32e-4 vt0=0.4)
+.MODEL pfet pMOS ( kp=1.12e-4 vt0=-0.4)
+
+
+.print dc v(clock)
+.print dc v(invout)
+
+.print dc v(D)
+.print dc v(Q)
+
+.end

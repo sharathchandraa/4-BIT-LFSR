@@ -1,0 +1,83 @@
+* SPICE3 file created from test.ext - technology: scmos
+
+.option scale=1u
+
+M1000 invout clock vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=936 ps=538
+M1001 a_n1186_n32# D vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1002 vdd invout a_n1186_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1003 a_n1089_n32# a_n1173_n111# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1004 vdd invout a_n1089_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1005 a_n1003_n32# a_n1089_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1006 vdd a_n968_n33# a_n1003_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1007 a_n968_n33# a_n1003_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1008 vdd a_n1186_n32# a_n968_n33# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1009 a_n775_n32# a_n968_n33# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1010 vdd clock a_n775_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1011 a_n679_n32# a_n762_n107# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1012 vdd clock a_n679_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1013 a_n597_n32# a_n679_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1014 vdd out a_n597_n32# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1015 out a_n597_n32# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1016 vdd a_n775_n32# out vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1017 invout clock gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=352 ps=264
+M1018 a_n1177_n31# D a_n1186_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1019 gnd invout a_n1177_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1020 a_n1080_n31# a_n1173_n111# a_n1089_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1021 gnd invout a_n1080_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1022 a_n994_n31# a_n1089_n32# a_n1003_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1023 gnd a_n968_n33# a_n994_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1024 a_n920_n31# a_n1003_n32# a_n968_n33# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1025 gnd a_n1186_n32# a_n920_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1026 a_n766_n31# a_n968_n33# a_n775_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1027 gnd clock a_n766_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1028 a_n670_n31# a_n762_n107# a_n679_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1029 gnd clock a_n670_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1030 a_n588_n31# a_n679_n32# a_n597_n32# Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1031 gnd out a_n588_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1032 a_n506_n31# a_n597_n32# out Gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1033 gnd a_n775_n32# a_n506_n31# Gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1034 a_n1173_n111# D vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+M1035 a_n762_n107# a_n968_n33# vdd vdd pfet w=8 l=2
++ ad=56 pd=30 as=0 ps=0
+M1036 a_n1173_n111# D gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+M1037 a_n762_n107# a_n968_n33# gnd Gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+
+C0 clock vdd 9.1fF
+

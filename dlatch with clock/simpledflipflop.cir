@@ -1,0 +1,51 @@
+simple d flipflop
+M1000 a_11_n28# D vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=447 ps=256
+M1001 vdd clock a_11_n28# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1002 a_136_n28# a_95_n107# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1003 vdd clock a_136_n28# vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1004 Qbar a_136_n28# vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1005 vdd Q Qbar vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1006 Q Qbar vdd vdd pfet w=8 l=2
++ ad=96 pd=56 as=0 ps=0
+M1007 vdd a_11_n28# Q vdd pfet w=8 l=2
++ ad=0 pd=0 as=0 ps=0
+M1008 a_20_n27# D a_11_n28# gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1009 gnd clock a_20_n27# gnd nfet w=4 l=2
++ ad=160 pd=120 as=0 ps=0
+M1010 a_145_n27# a_95_n107# a_136_n28# gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1011 gnd clock a_145_n27# gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1012 a_261_n26# a_136_n28# Qbar gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1013 gnd Q a_261_n26# gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1014 a_385_n26# Qbar Q gnd nfet w=4 l=2
++ ad=64 pd=48 as=32 ps=24
+M1015 gnd a_11_n28# a_385_n26# gnd nfet w=4 l=2
++ ad=0 pd=0 as=0 ps=0
+M1016 a_95_n107# D vdd vdd pfet w=9 l=2
++ ad=63 pd=32 as=0 ps=0
+M1017 a_95_n107# D gnd gnd nfet w=4 l=2
++ ad=32 pd=24 as=0 ps=0
+rgnd gnd 0 1e-6
+v3 vdd gnd 5
+v1 D 0 pulse(0 5 120ns 0ns 0ns 20ns 500ns)
+v2 clock 0 pulse(0 5 90ns 0ns 0ns 40ns 100ns)
+
+.trans 1ns 1000ns
+..MODEL nfet NMOS ( kp=4.32e-4 vt0=0.4)
+.MODEL pfet pMOS ( kp=1.12e-4 vt0=-0.4)
+
+.print dc v(clock)
+.print dc v(D)
+.print dc v(Q)
+.print dc v(Qbar)
+.end
