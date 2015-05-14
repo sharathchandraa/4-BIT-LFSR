@@ -1,0 +1,3 @@
+# 4-BIT-LFSR
+
+An LFSR is a shift register that when clocked, advances the signal through the register from one bit to the next most-significant bit. A linear feedback shift register can be formed by performing exclusive-OR on the outputs of two or more of the flip-flops together and feeding those outputs back into the input of one of the flip-flops. The feedback causes the value in the shift register to cycle through a set of unique values. The choice of LFSR length, gate type, LFSR type, and maximum length logic and tap positions allows the user to control the implementation and feedback of the LFSR which in turn controls the sequence of repeating values the LFSR will iterate through. 
